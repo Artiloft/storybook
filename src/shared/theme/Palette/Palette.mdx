@@ -1,0 +1,61 @@
+{/*
+    See documentations of blocks
+    https://storybook.js.org/docs/writing-docs/doc-blocks
+*/}
+import { Meta, Primary, Controls, Story, Title, Subtitle, Description, Stories, Source } from '@storybook/addon-docs/blocks';
+import * as Palette from './Palette.stories';
+
+
+<Meta of={Palette} />
+
+# Palette
+Palette provides the color palette for the entire design. All colors are available in SCSS.
+A palette of highlighted colors from the main palette, called “Accents,” is also available is SCSS.
+
+## Palette
+<Palette.ColorCards list={Palette.themeColor.palette} />
+
+## Colors (Accents)
+<Palette.ColorCards list={Palette.themeColor.colors} />
+
+
+```scss 
+/* scss example */
+button.primary {
+    background-color: $primary
+}
+
+/* Map of palette */
+@each $name, $color in $t-palette--palette {
+  .t-palette--color-#{$name} {
+    color: $color;
+  }
+  .t-palette--background-#{$name} {
+    background-color: $color;
+  }
+}
+
+/* Map of colors (accents) */
+@each $name, $color in $t-palette--colors {
+  .t-palette--color-#{$name} {
+    color: $color;
+  }
+  .t-palette--background-#{$name} {
+    background-color: $color;
+  } 
+}
+
+```
+
+
+## Accessibility contrast
+
+[WCAG 1.4.3](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) (Web Content Accessibility Guidelines) defines text contrast requirements to ensure readability for people with visual impairments. The main criteria are:
+
+Contrast for normal text
+	- Font size < 18pt (or < 14pt bold): Minimum 4.5:1
+	- Font size ≥ 18pt (or ≥ 14pt bold): Minimum 3:1
+
+
+<Palette.ColorCardsDetails list={Palette.themeColor.palette} />
+

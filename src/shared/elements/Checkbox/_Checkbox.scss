@@ -1,0 +1,44 @@
+@import "./_Variables";
+/*
+    Syntax:
+    <label class="e-checkbox">
+        <input type="checkbox"/>
+        <i></i>
+        <span>Default button</span>
+    </label>
+*/
+.e-checkbox {
+    line-height: 1rem;
+    input {
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        &:checked + i {
+            background-image: $e-checkbox--icon-checked;
+        }
+        &:disabled + i {
+            cursor: default;
+            opacity: .5;
+            & + span {
+                cursor: default;
+                color: $e-checkbox--disable-color;
+            }
+        }
+    }
+    i {
+        @include e-icon;
+        background-image: $e-checkbox--icon;
+        cursor: pointer;
+        margin-inline-end: .5rem;
+        vertical-align: middle;
+        & + span {
+            cursor: pointer;
+            user-select: none;
+            vertical-align: middle;
+        }
+    }
+
+}

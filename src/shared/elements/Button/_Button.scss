@@ -1,0 +1,98 @@
+@import "./_Variables";
+/*
+
+    Syntax:
+        <button class="e-button e-icon e-icon--123">Button</button>
+        <button class="e-button primary">Button</button>
+        <button class="e-button secondary">Button</button>
+        <button class="e-button" disabled>Button</button>
+*/
+.e-button {
+    color: $e-button--default-color;
+    background-color: $e-button--default-background;
+    padding: $e-button--padding;
+    border: $e-button--default-border;
+    border-radius: $e-button--default-radius;
+    font-size: $e-button--font-size;
+    text-align: center;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $e-button--default-background-hover;
+    }
+    &:active{
+        background-color: $e-button--default-background-active;
+    }
+    &:disabled, &.disabled, &[disabled] {
+        color: $e-button--default-disabled-color;
+        background-color: $e-button--default-disabled-background;
+        border: $e-button--default-disabled-border;
+        cursor: default;
+        &:hover {
+            color: $e-button--default-disabled-color;
+            background-color: $e-button--default-disabled-background;
+            border: $e-button--default-disabled-border;
+        }
+        .e-icon {
+            opacity: .6;
+        }
+    }
+
+    .e-icon {
+        vertical-align: text-bottom;
+        &:first-child {
+            margin-inline-end: .5rem;
+        }
+        &:last-child {
+            margin-inline-start: .5rem;
+        }
+    }
+
+
+    &.primary {
+        color: $e-button--primary-color;
+        background-color: $e-button--primary-background;
+        border: $e-button--primary-border;
+        &:hover {
+            background-color: $e-button--primary-background-hover;
+        }
+        &:active{
+            background-color: $e-button--primary-background-active;
+        }
+        &:disabled, &.disabled, &[disabled] {
+            color: $e-button--primary-disabled-color;
+            background-color: $e-button--primary-disabled-background;
+            border: $e-button--primary-disabled-border;
+            cursor: default;
+            &:hover {
+                color: $e-button--primary-disabled-color;
+                background-color: $e-button--primary-disabled-background;
+            }
+        }
+    }
+
+    &.secondary {
+        background-color: transparent;
+        border-color: transparent;
+        color: $e-button--secondary-color;
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+            color: $e-button--secondary-color-hover;
+        }
+        &:disabled, &.disabled, &[disabled] {
+            color: $e-button--secondary-color-disabled;
+            background-color: transparent;
+            border-color: transparent;
+            cursor: default;
+            &:hover {
+                color: $e-button--secondary-color-disabled;
+                background-color: transparent;
+                border-color: transparent;
+                cursor: default;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+
+@use "sass:math";
+@import "../Palette/_Variables.scss";
+
+$t-document--font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+$t-document--font-size: 16px;
+$t-document--font-color: $gray900;
+$t-document--line-height: 1.5;
+$t-document--background-color: $white;
+
+$t-document--focus-outline: 2px solid $cyan;
+$t-document--focus-outline-offset: 1px;
+
+$t-document--mobile-width: 768px;
+
+
+/* Syntax: 
+    @include t-document--mobile {
+        max-width: 100%;
+    }
+*/
+@mixin t-document--mobile {
+  @media (max-width: $t-document--mobile-width), (max-width: ($t-document--mobile-width - 1)) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/* Syntax: 
+    t-document--strip-units(2rem) // -> 2
+    t-document--strip-units(50px) // -> 50
+*/
+@function t-document--strip-units($number) {
+    @return math.div($number, ($number * 0 + 1));
+}
+
+/* Syntax: 
+    width: t-document--rem(32px); // width: 2rem;
+*/
+@function t-document--rem($px-value) {
+  @return math.div(t-document--strip-units($px-value), t-document--strip-units($t-document--font-size)) * 1rem;
+}
+
+/* Syntax: 
+    width: t-document--px(2rem); // width: 32px;
+*/
+@function t-document--px($rem-value) {
+  @return (t-document--strip-units($rem-value) * t-document--strip-units($t-document--font-size)) * 1px;
+}

@@ -1,0 +1,16 @@
+@import "./_Variables";
+
+html, body {
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    min-height: 100dvh;
+    font-family: #{$t-document--font-family};
+    font-size: #{$t-document--font-size};
+    line-height: #{$t-document--line-height};
+    color: #{$t-document--font-color};
+    background-color: #{$t-document--background-color};
+}
+*:focus-visible, .focus {
+    outline: $t-document--focus-outline;
+    outline-offset: $t-document--focus-outline-offset;
+}

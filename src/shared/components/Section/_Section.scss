@@ -1,0 +1,25 @@
+@import "./_Variables";
+@import "../../theme/Document/_Variables";
+
+/*
+    Syntax:
+        <section class="c-section">
+        </section>
+
+        <section class="c-section c-section--padding">
+        </section>
+*/
+.c-section {
+    max-width: $c-section--max-width;
+    margin-inline: auto;
+
+    $section-breakpoint: t-document--px($c-section--padding) * 2 + $c-section--max-width;
+    &--padding {
+        @media (max-width: $section-breakpoint) {
+            padding-inline: min(#{$c-section--padding}, calc((#{$section-breakpoint} - 100vw)/2));
+        }
+        @media (max-width: $section-breakpoint) and (min-width: $c-section--max-width) {
+            margin-inline: calc(#{$c-section--padding} - ((#{$section-breakpoint} - 100vw)/2));
+        }
+    }
+}

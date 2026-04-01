@@ -1,0 +1,53 @@
+import { Meta, Primary, Controls, Story, Title, Subtitle, Description, Stories, Source } from '@storybook/addon-docs/blocks';
+import {uStorybookBlockTable as UStorybookBlockTable} from './StorybookBlocks';
+
+# JS Utils
+
+### \<uStorybookBlockTable /\>
+utils/StorybookBlocks.jsx
+
+<UStorybookBlockTable 
+  columns={["Variable", "Value"]} 
+  list={[
+    ["Variable1", "Value1"],
+    ["Variable2", "Value2"],
+    ["Variable3", "Value3"]
+  ]}
+/>
+<Source 
+    code={
+    `
+        import {uStorybookBlockTable as UStorybookBlockTable} from '.../utils/StorybookBlocks';
+
+        <UStorybookBlockTable 
+        columns={["Variable", "Value"]} 
+        list={[
+            ["Variable1", "Value1"],
+            ["Variable2", "Value2"],
+            ["Variable3", "Value3"]
+        ]}
+        />
+    `
+} />
+
+
+### uGetCssVariables()
+
+utils/CssVariables.jsx
+
+<Source 
+    code={
+    `
+        import { uGetCssVariables } from ".../utils/CssVariables.jsx";
+
+        /* Get all variables --theme--* from css */
+        export const iconsName = uGetCssVariables('--e-icon--local-')
+            .reduce((r, [key, value]) => {
+                r.push(key);
+                return r;
+            },[]);
+
+    `
+} />
+
+

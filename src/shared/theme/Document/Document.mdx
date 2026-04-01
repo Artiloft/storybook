@@ -1,0 +1,22 @@
+{/*
+    See documentations of blocks
+    https://storybook.js.org/docs/writing-docs/doc-blocks
+*/}
+
+import { Meta, Primary, Controls, Story, Title, Subtitle, Description, Stories } from '@storybook/addon-docs/blocks';
+
+
+import {uStorybookBlockTable as UStorybookBlockTable} from '../../utils/StorybookBlocks';
+
+import * as Document from './Document.stories';
+
+<Meta of={Document} />
+
+# Document
+The ‘Document’ applies the main styles to the root element and defines the global properties of the website, and provide variables of scss.
+
+<UStorybookBlockTable 
+  columns={["SCSS variable", "Value"]} 
+  list={Document.documentVariables}
+/>
+

@@ -1,0 +1,8 @@
+@import "../Icon/_Variables.scss";
+@import "../Icon/_Variables";
+@import "../Button/_Variables";
+
+$e-checkbox--color: $e-button--default-color;
+$e-checkbox--disable-color: $e-button--default-disabled-color;
+$e-checkbox--icon: e-icon--url('check-box-b');
+$e-checkbox--icon-checked: e-icon--url('check-box-checked-b');

@@ -1,0 +1,61 @@
+
+/*
+    See https://icons.getbootstrap.com/
+*/
+@import "../../theme/Palette/Variables";
+@import "./_Variables";
+@import "./_Icon";
+
+:root {
+  @each $icon, $codepoint in $e-icons--map {
+    --e-icon--local-#{$icon}: #{$icon};
+  }
+
+  @each $icon, $codepoint in $e-icons--bootstrap-map {
+    --e-icon--bootstrap-#{$icon}: #{$icon};
+  }
+}
+
+@each $icon, $codepoint in $e-icons--bootstrap-map {
+  .e-icon--bootstrap-#{$icon} { background-image: url(/src/assets/icons/bootstrap/#{$icon}.svg); }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: space-between;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    background-color: $gray200;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    gap: 1rem;
+    i {
+      width: 4rem;
+    }
+    .name {
+      font-family: Tahoma, Arial;
+      color: $gray600;
+    }
+    
+  }
+}
+
+.grid-bootstrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    background-color: $gray200;
+    border-radius: 3px;
+    padding: .5rem;
+    i {
+      width: 2rem;
+    }
+  }
+}

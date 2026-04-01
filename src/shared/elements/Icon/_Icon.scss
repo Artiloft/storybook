@@ -1,0 +1,15 @@
+
+/*
+    See https://icons.getbootstrap.com/
+    Syntax:
+      <i class="e-icon e-icon--image-b"></i>
+*/
+
+@import "./_Variables";
+.e-icon {
+    @include e-icon;
+}
+
+@each $icon, $codepoint in $e-icons--map {
+  .e-icon--#{$icon} { background-image: url(/src/assets/icons/local/#{$icon}.svg); }
+}

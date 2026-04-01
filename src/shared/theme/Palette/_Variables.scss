@@ -1,0 +1,99 @@
+// _Theme.scss
+@use "sass:math";
+/* for sass 1.77.0 */ 
+@function channel-to-hex($value) {
+  $digits: "0123456789ABCDEF";
+  $hi: str-slice($digits, floor(math.div($value, 16)) + 1, floor(math.div($value, 16)) + 1);
+  $lo: str-slice($digits, ($value % 16) + 1, ($value % 16) + 1);
+  @return $hi + $lo;
+}
+/* for sass 1.92.1 */ 
+// @function channel-to-hex($channel) {
+//   $value: round($channel); // округляем до целого 0–255
+//   $digits: "0123456789abcdef";
+//   $hi: str-slice($digits, floor($value / 16) + 1, floor($value / 16) + 1);
+//   $lo: str-slice($digits, ($value % 16) + 1, ($value % 16) + 1);
+//   @return "#{$hi}#{$lo}";
+// }
+
+@function to-hex($color) {
+  @return unquote(
+    "##{channel-to-hex(red($color))}#{channel-to-hex(green($color))}#{channel-to-hex(blue($color))}"
+  );
+}
+
+// Palette
+$gray100: #f8f9fa;
+$gray200: #e9ecef;
+$gray300: #dee2e6;
+$gray400: #ced4da;
+$gray500: #adb5bd;
+$gray600: #6c757d;
+$gray700: #495057;
+$gray800: #343a40;
+$gray900: #212529;
+
+$white:    #ffffff !default;
+$blue:     #0d6efd !default;
+$bluem:    to-hex(lighten($blue, 10%));
+$bluep:    to-hex(darken($blue, 10%));
+$indigo:   #6610f2 !default;
+$purple:   #6f42c1 !default;
+$pink:     #d63384 !default;
+$red:      #dc3545 !default;
+$orange:   #fd7e14 !default;
+$yellow:   #ffc107 !default;
+$green:    #198754 !default;
+$teal:     #20c997 !default;
+$cyan:     #0dcaf0 !default;
+$gray:     #6c757d !default;
+$black:    #000 !default;
+
+$t-palette--palette: (
+  "gray100":   $gray100,
+  "gray200":   $gray200,
+  "gray300":   $gray300,
+  "gray400":   $gray400,
+  "gray500":   $gray500,
+  "gray600":   $gray600,
+  "gray700":   $gray700,
+  "gray800":   $gray800,
+  "gray900":   $gray900,
+  "white":     $white,
+  "bluem":     $bluem,
+  "blue":      $blue,
+  "bluep":     $bluep,
+  "indigo":    $indigo,
+  "purple":    $purple,
+  "pink":      $pink,
+  "red":       $red,
+  "orange":    $orange,
+  "yellow":    $yellow,
+  "green":     $green,
+  "teal":      $teal,
+  "cyan":      $cyan,
+  "gray":      $gray,
+  "black":     $black
+) !default;
+
+// Accent
+$primary:       $blue !default;
+$primarym:     $bluem !default;
+$primaryp:     $bluep !default;
+
+$secondary:     $gray !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+
+$t-palette--colors: (
+  "primarym":   $primarym,
+  "primary":    $primary,
+  "primaryp":   $primaryp,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+) !default;

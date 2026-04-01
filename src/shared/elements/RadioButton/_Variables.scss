@@ -1,0 +1,8 @@
+@import "../Icon/_Variables.scss";
+@import "../Icon/_Variables";
+@import "../Button/_Variables";
+
+$e-radio-button--color: $e-button--default-color;
+$e-radio-button--disable-color: $e-button--default-disabled-color;
+$e-radio-button--icon: e-icon--url('radio-b');
+$e-radio-button--icon-checked: e-icon--url('radio-checked-b');

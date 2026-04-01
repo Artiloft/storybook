@@ -1,0 +1,9 @@
+@import "./_Section.scss";
+@import "../../theme/Document/_Document";
+
+.c-section {
+    border: 1px dotted gray;
+    .e-dimension {
+        display: block;
+    }
+}

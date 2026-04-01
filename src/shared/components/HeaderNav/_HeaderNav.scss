@@ -1,0 +1,70 @@
+@import "./_Variables";
+@import "../../elements/Icon/_Variables";
+.c-header-nav {
+    display: block;
+    & > ul {
+        display: flex;
+        & > li {
+            & > button, & > a, & > details > summary {
+                padding: $c-header-nav--button-padding;
+                display: block;
+                line-height: 1rem;
+            }
+            
+            /* 1st level */
+            & > details {
+                position: relative;
+                & > summary {
+                    
+                    &::after {
+                        @include e-icon;
+                        content: '';
+                        background-image: e-icon--url('chevron-b');
+                        vertical-align: bottom;
+                        margin-inline-start: .5rem;
+                        rotate: 90deg;
+                    }
+                }
+                & > *:last-child {
+                    position: absolute;
+                    bottom: 0;
+                    transform: translate(0, 100%);
+                    background-color: white;
+                }
+            }
+            
+        }
+    }
+
+    ul {
+        padding-inline-start: 0;
+        li {
+            list-style: none;
+        }
+    }
+
+    button, a, details > summary {
+        text-decoration: none;
+        color: $c-header-nav--button-color;
+        cursor: pointer;
+        &:hover {
+            background-color: $c-header-nav--button-background-hover;
+            
+        }
+    }
+
+    
+    
+    details {
+        summary {
+            &::marker {
+                content: '';
+            }
+        }
+
+        & > *:last-child {
+
+        }
+    }
+    
+}

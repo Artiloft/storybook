@@ -1,0 +1,44 @@
+@import "./_Variables";
+/*
+    Syntax:
+        <label class="e-radio-button">
+            <input type="radio" name=""/>
+            <i></i>
+            <span>RadioButton label</span>
+        </label>
+*/
+.e-radio-button {
+    line-height: 1rem;
+    input {
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        &:checked + i {
+            background-image: $e-radio-button--icon-checked;
+        }
+        &:disabled + i {
+            cursor: default;
+            opacity: .5;
+            & + span {
+                cursor: default;
+                color: $e-radio-button--disable-color;
+            }
+        }
+    }
+    i {
+        @include e-icon;
+        background-image: $e-radio-button--icon;
+        cursor: pointer;
+        margin-inline-end: .5rem;
+        vertical-align: middle;
+        & + span {
+            cursor: pointer;
+            user-select: none;
+            vertical-align: middle;
+        }
+    }
+
+}

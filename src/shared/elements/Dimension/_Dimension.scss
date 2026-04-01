@@ -1,0 +1,13 @@
+@import "./_Variables";
+
+/*
+    Syntax:
+        <element-dimension class="e-dimension"></element-dimension>
+*/
+.e-dimension {
+    background-color: aqua;
+    font-size: .5rem;
+    overflow: hidden;
+    text-align: center;
+    align-content: center
+}

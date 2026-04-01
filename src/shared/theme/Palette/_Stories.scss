@@ -1,0 +1,135 @@
+@import "./_Variables.scss";
+
+@each $name, $color in $t-palette--palette {
+  .t-palette--color-#{$name} {
+    color: $color;
+  }
+  .t-palette--background-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $t-palette--colors {
+  .t-palette--color-#{$name} {
+    color: $color;
+  }
+  .t-palette--background-#{$name} {
+    background-color: $color;
+  } 
+}
+
+:root {
+  @each $name, $color in $t-palette--palette {
+    --t-palette--palette-#{$name}: #{$color};
+  }    
+  @each $name, $color in $t-palette--colors {
+    --t-palette--colors-#{$name}: #{$color};
+  }
+}
+
+/*
+  Syntax:
+
+  <div class="t-palette--color">
+    <div class="t-palette--color-background t-palette--background-blue"></div>
+    <b class="t-palette--color-name">$blue</b>
+    <span class="t-palette--color-code">#0d6efd</span>
+  </div>
+
+  <div class="t-palette--color-details">
+    <div class="t-palette--color">
+      <div class="t-palette--color-background t-palette--background-gray100"></div>
+      <b class="t-palette--color-name">$gray100</b>
+      <span class="t-palette--color-code">#f8f9fa</span>
+    </div>
+    <div>
+      <div class="t-palette--color-details-list">
+        <div class="t-palette--color-details-list-card contrast-error">
+          <div class="t-palette--color-details-list-card-rect t-palette--background-gray200"></div>
+          <div class="t-palette--color-details-list-card-contrast">1.12</div>
+          <div class="t-palette--color-details-list-card-name">$gray200</div>
+        </div>
+        ...
+      </div>
+  </div>
+*/
+
+.t-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    &--color {
+        display: inline-flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding: .5rem;
+        font-size: 14px;
+        background-color: white;
+        border: 1px solid black;
+        &-background {
+            display: block;
+            border: 1px solid black;
+            outline: 1px solid white;
+            outline-offset: -2px;
+            width: 5rem;
+            height: 5rem;
+        }
+        &-name {
+            display: block;
+        }
+        &-code {
+            display: block;
+        }
+    }
+
+    &--color-details {
+        display: flex;
+        gap: .5rem;
+        width: 100%;
+        
+        /* &--color */
+        & > *:first-child {
+            flex: 0;
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            &-card {
+                min-width: 150px;
+                display: inline-flex;
+                gap: .5rem;
+                padding: .5rem;
+                background-color: $gray100;
+                border-radius: 3px;
+                border: 1px solid transparent;
+                &.contrast-error {
+                    background-color: lighten($danger, 40%);
+                }
+                &.contrast-good {
+                    //background-color: lighten($warning, 40%);
+                    border: 1px solid $success;
+                }
+                &.contrast-perfect {
+                    background-color: lighten($success, 40%);
+                }
+
+                &-rect {
+                    border: 1px solid $gray;
+                    width: 1rem;
+                    height: 1rem;
+                    align-self: center;
+                }
+                &-name {
+                    align-self: center;
+                    flex: 1;
+                }
+                &-contrast {
+                    align-self: center;
+                }                                
+            } 
+        }
+    }    
+}

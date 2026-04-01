@@ -1,0 +1,33 @@
+{
+  "type": "module",
+
+  "devDependencies_backup": {
+    "sass": "^1.92.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.0.0-beta.2",
+    "@storybook/html-vite": "^10.0.0-beta.2",
+    "@storybook/mdx2-csf": "^1.1.0",
+    "bootstrap-icons": "^1.13.1",
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^5.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "1.77.0",
+    "spectre.css": "^0.5.9",
+    "storybook": "^10.0.0-beta.2"
+  },
+  "dependencies": {
+    "@fontsource/roboto": "^5.2.6"
+  },
+  "scripts": {
+    "sb": "node --no-warnings node_modules/.bin/storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}

@@ -1,0 +1,34 @@
+@import "../../Theme/Palette/_Variables";
+
+/* Default button */
+$e-button--padding: .5rem 1rem;
+$e-button--font-size: .88rem;
+$e-button--default-radius: 3px;
+$e-button--default-background: $gray300;
+$e-button--default-background-hover: $gray400;
+$e-button--default-background-active: $gray200;
+$e-button--default-color: $black;
+$e-button--default-border: 1px solid $gray400;
+
+$e-button--default-disabled-color: $gray600;
+$e-button--default-disabled-background: $gray100;
+$e-button--default-disabled-border: 1px solid $gray300;
+
+
+/* Primary button */
+$e-button--primary-color: $white;
+$e-button--primary-background: $primary;
+$e-button--primary-background-hover: $primaryp;
+$e-button--primary-background-active: $primarym;
+$e-button--primary-border: 1px solid $primaryp;
+
+$e-button--primary-disabled-color: $gray100;
+$e-button--primary-disabled-background: $primarym;
+$e-button--primary-disabled-border: 1px solid $gray300;
+
+
+/* Secondary button */
+$e-button--secondary-color: $primary;
+$e-button--secondary-color-hover: $primaryp;
+$e-button--secondary-color-disabled: $gray600;
+

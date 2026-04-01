@@ -1,0 +1,13 @@
+@import "./_Variables";
+@import "./_Document";
+
+:root {
+    --t-document--font-family: #{$t-document--font-family};
+    --t-document--font-size:   #{$t-document--font-size};
+    --t-document--line-height: #{$t-document--line-height};
+    --t-document--font-color:  #{$t-document--font-color};
+    --t-document--background-color:  #{$t-document--background-color};
+    --t-document--focus-outline:  #{$t-document--focus-outline};
+    --t-document--focus-outline-offset:  #{$t-document--focus-outline-offset};
+    --t-document--mobile-width:  #{$t-document--mobile-width};
+}
