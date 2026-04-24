@@ -1,0 +1,107 @@
+@import "./_Variables";
+
+/*
+    Syntax:
+    <select-dropbox name="field" placeholder="Choose option">
+        <option value="1">Option 1</option>
+        <option value="2" selected>Option 2</option>
+        <option value="3" disabled>Disabled option</option>
+    </select-dropbox>
+*/
+
+.e-select-dropbox {
+    position: relative;
+    display: inline-block;
+    font-size: $e-select-dropbox--font-size;
+
+    // Native <select> — visible on mobile only
+    &__native {
+        display: none;
+
+        @include t-document--mobile {
+            display: block;
+            width: 100%;
+            padding: $e-select-dropbox--padding;
+            border: $e-select-dropbox--border;
+            border-radius: $e-select-dropbox--radius;
+            font-size: $e-select-dropbox--font-size;
+            background-color: $e-select-dropbox--background;
+            color: $e-select-dropbox--color;
+            cursor: pointer;
+            appearance: auto;
+
+            &:disabled {
+                color: $e-select-dropbox--disabled-color;
+                background-color: $e-select-dropbox--disabled-background;
+                border: $e-select-dropbox--disabled-border;
+                cursor: default;
+            }
+        }
+    }
+
+    // Custom UI — hidden on mobile
+    &__custom {
+        display: block;
+
+        @include t-document--mobile {
+            display: none;
+        }
+    }
+
+    // Trigger button
+    &__trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+        min-width: $e-select-dropbox--dropdown-min-width;
+        padding: $e-select-dropbox--padding;
+        border: $e-select-dropbox--border;
+        border-radius: $e-select-dropbox--radius;
+        background-color: $e-select-dropbox--background;
+        color: $e-select-dropbox--color;
+        font-size: $e-select-dropbox--font-size;
+        text-align: start;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: $e-select-dropbox--background-hover;
+        }
+
+        &:active {
+            background-color: $e-select-dropbox--background-active;
+        }
+
+        &:disabled {
+            color: $e-select-dropbox--disabled-color;
+            background-color: $e-select-dropbox--disabled-background;
+            border: $e-select-dropbox--disabled-border;
+            cursor: default;
+
+            &:hover,
+            &:active {
+                background-color: $e-select-dropbox--disabled-background;
+            }
+        }
+
+        .e-icon {
+            flex-shrink: 0;
+        }
+    }
+
+    &__label {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .e-select-box {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 0;
+        min-width: 100%;
+        z-index: 1000;
+    }
+}
+

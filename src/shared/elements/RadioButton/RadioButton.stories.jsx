@@ -22,34 +22,34 @@ export default {
     tags: ['autodocs'],
     render: (arg) => renderToString(Component(arg)),
     argTypes: {
-      label: { control: 'text' },
-      checked: { control: 'boolean' },
-      disabled: { control: 'boolean' }
+        label: { control: 'text' },
+        checked: { control: 'boolean' },
+        disabled: { control: 'boolean' }
     }
 }
 
 
 export const Default = {
-  args: {
-    label: "RadioButton label",
-  }
+    args: {
+        label: "RadioButton label",
+    }
 };
 
 export const AllVariants = () => {
-  return renderToString(
-    <>
-      {[false, true].map((checked, i) => [false, true].map((disabled, ii) =>
-          <>
-            <Component
-              name="c"
-              key={`${i}-${ii}-${checked}-${disabled}`}
-              checked={checked}
-              disabled={disabled}
-              label={`Label ${checked ? 'Checked' : ''} ${disabled ? 'disabled' : ''}`}
-            />
-            &nbsp;
-          </>
-      )) }
-    </>
-  );
+    return renderToString(
+        <>
+            {[false, true].map((checked, i) => [false, true].map((disabled, ii) =>
+                <>
+                    <Component
+                        name="c"
+                        key={`${i}-${ii}-${checked}-${disabled}`}
+                        checked={checked}
+                        disabled={disabled}
+                        label={`Label ${checked ? 'Checked' : ''} ${disabled ? 'disabled' : ''}`}
+                    />
+                    &nbsp;
+                </>
+            )) }
+        </>
+    );
 };

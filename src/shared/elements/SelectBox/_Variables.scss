@@ -1,0 +1,14 @@
+@import "../Button/_Variables";
+
+$e-select-box--radius:                   $e-button--default-radius;
+$e-select-box--border:                   $e-button--default-border;
+
+$e-select-box--background:               $white;
+$e-select-box--shadow:                   0 4px 16px rgba(0, 0, 0, 0.12);
+
+$e-select-box--item-padding:             .5rem 1rem;
+$e-select-box--item-hover-background:    $gray200;
+$e-select-box--item-focused-background:  $gray300;
+$e-select-box--item-selected-background: $primary;
+$e-select-box--item-selected-color:      $white;
+$e-select-box--item-disabled-color:      $e-button--default-disabled-color;

@@ -1,0 +1,18 @@
+@import "../Button/_Variables";
+@import "../../theme/Document/_Variables";
+
+// Inherited from Button
+$e-select-dropbox--padding:                  $e-button--padding;
+$e-select-dropbox--font-size:                $e-button--font-size;
+$e-select-dropbox--radius:                   $e-button--default-radius;
+$e-select-dropbox--color:                    $e-button--default-color;
+$e-select-dropbox--background:               $e-button--default-background;
+$e-select-dropbox--background-hover:         $e-button--default-background-hover;
+$e-select-dropbox--background-active:        $e-button--default-background-active;
+$e-select-dropbox--border:                   $e-button--default-border;
+
+$e-select-dropbox--disabled-color:           $e-button--default-disabled-color;
+$e-select-dropbox--disabled-background:      $e-button--default-disabled-background;
+$e-select-dropbox--disabled-border:          $e-button--default-disabled-border;
+
+$e-select-dropbox--dropdown-min-width:       10rem;

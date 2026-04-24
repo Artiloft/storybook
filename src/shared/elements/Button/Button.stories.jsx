@@ -13,16 +13,16 @@ export const Component = ({
     icon_end = ''
   }) => {
     if (icon) {
-      return (
-        <button className={`e-button ${type}`} disabled={disabled}>
-          <i class={`e-icon e-icon--${icon}`}></i>
-          {label}
-          <i class={`e-icon e-icon--${icon_end}`}></i>
-        </button>
-      )  
+        return (
+            <button className={`e-button ${type}`} disabled={disabled}>
+            <i class={`e-icon e-icon--${icon}`}></i>
+            {label}
+            <i class={`e-icon e-icon--${icon_end}`}></i>
+            </button>
+        )  
     }
     return (
-      <button className={`e-button ${icon_end}`} disabled={disabled}>{label}</button>
+        <button className={`e-button ${icon_end}`} disabled={disabled}>{label}</button>
     )
 };
 
@@ -34,74 +34,74 @@ export default {
     tags: ['autodocs'],
     render: (arg) => renderToString(Component(arg)),
     argTypes: {
-      label: { control: 'text' },
-      type: {
-        control: { type: 'select' },
-        options: ['', 'primary', 'secondary'],
-      },
-      icon: {
-        control: { type: 'select' },
-        options: iconsName,
-      },
-      icon_end: {
-        control: { type: 'select' },
-        options: ['', 'chevron-b'],
-      },
-      disabled: { control: 'boolean' }
+        label: { control: 'text' },
+        type: {
+            control: { type: 'select' },
+            options: ['', 'primary', 'secondary'],
+        },
+        icon: {
+            control: { type: 'select' },
+            options: iconsName,
+        },
+        icon_end: {
+            control: { type: 'select' },
+            options: ['', 'chevron-b'],
+        },
+        disabled: { control: 'boolean' }
     }
 }
 
 
 
 export const DefaultButton = {
-  args: {
-    label: "Default button",
-  }
+    args: {
+        label: "Default button",
+    }
 };
 export const DefaultIconButton = {
-  args: {
-    label: "Default button",
-    icon: "image-b"
-  }
+    args: {
+        label: "Default button",
+        icon: "image-b"
+    }
 };
 export const DefaultDisabledButton = {
-  args: {
-    label: "Disabled button",
-    disabled: true
-  }
+    args: {
+        label: "Disabled button",
+        disabled: true
+    }
 };
 export const DefaultDisabledIconButton = {
-  args: {
-    label: "Disabled button",
-    disabled: true,
-    icon: "image-b"
-  }
+    args: {
+        label: "Disabled button",
+        disabled: true,
+        icon: "image-b"
+    }
 };
 export const PrimaryButton = {
-  args: {
-    label: "Primary button",
-    type: "primary"
-  }
+    args: {
+        label: "Primary button",
+        type: "primary"
+    }
 };
 export const IconPrimaryButton = {
-  args: {
-    label: "Primary button",
-    type: "Icon primary",
-    icon: "check-box-checked-w"
-  }
+    args: {
+        label: "Primary button",
+        type: "Icon primary",
+        icon: "check-box-checked-w"
+    }
 };
 export const SecondaryButton = {
-  args: {
-    label: "Secondary button",
-    type: "secondary"
-  }
+    args: {
+        label: "Secondary button",
+        type: "secondary"
+    }
 };
 export const SecondarDisabledButton = {
-  args: {
-    label: "Secondary button",
-    type: "secondary",
-    disabled: true
-  }
+    args: {
+        label: "Secondary button",
+        type: "secondary",
+        disabled: true
+    }
 };
 
 export const AllVariants = () => {
@@ -110,20 +110,20 @@ export const AllVariants = () => {
 
   return renderToString(
     <>
-      {['', 'image-w', 'image-b'].map((icon) => variants.map((type) =>
-        disabledStates.map((disabled, i) => (
-          <>
-            <Component
-              key={`${type}-${i}-${disabled}-${icon}`}
-              type={type}
-              disabled={disabled}
-              label={`${type} ${disabled}`}
-              icon={icon}
-            />
-            &nbsp;
-          </>
-        ))
-      )) }
+        {['', 'image-w', 'image-b'].map((icon) => variants.map((type) =>
+            disabledStates.map((disabled, i) => (
+                <>
+                    <Component
+                        key={`${type}-${i}-${disabled}-${icon}`}
+                        type={type}
+                        disabled={disabled}
+                        label={`${type} ${disabled}`}
+                        icon={icon}
+                    />
+                    &nbsp;
+                </>
+            ))
+        )) }
     </>
   );
 };
